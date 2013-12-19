@@ -4,17 +4,20 @@ The Ruby solution to *phom*
 
 ---
 
-*rubiphom* is a Ruby wrapper for the *phom* R package for computing persistent homology. Although *rubiphom* harnesses all the power of *phom* and its native language R, you do not actually need to know R. Just pure, shiny Ruby.
+*rubiphom* is a Ruby wrapper for the *phom* R package to compute persistent homology. Although *rubiphom* harnesses all the power of *phom* and its native language R, you do not actually need to know R. Just pure, shiny Ruby.
 
-For further questions on the *phom* package, what it does, and how to use it, please refer to the [offical *phom* documentation](http://cran.r-project.org/web/packages/phom/phom.pdf). All R examples you see here are take from that documentation.
+For further questions on the *phom* package, what it does, and how to use it, please refer to the [offical *phom* documentation](http://cran.r-project.org/web/packages/phom/phom.pdf). All R examples you see here are taken from that documentation.
+
+## Release
+Version 1.0.0 (C) 2013
 
 ## Usage
-Note that all plots are written to PDFs (1 plot per PDF) in the same directory from which your script is run. Each PDF contains one plot and is named according to your plot title (plus a random, unique ID). If no plot title is provided, a random, unique file name will be chosen.
+All plots are written to PDFs in the same directory from which your script is run. Each PDF contains one plot and is named according to your plot title (plus a random, unique ID). If no plot title is provided, a random, unique file name will be chosen.
 
 ### Example 1
 
 Use *rubiphom* in your Ruby script as follows:
-    
+
     require './rubiphom.rb'
 
     rp = Rubiphom.new
@@ -104,3 +107,7 @@ The equivalent in R would be:
        install.packages("Rcpp", "phom")
        
 1. Download *rubiphom.rb* from here, and put it in the same directory as your Ruby script.
+
+## Author
+
+Sean Ephraim | sean-ephraim@uiowa.edu
