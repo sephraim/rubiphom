@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Rubiphom
+  
+    &mdash; Documentation by YARD 0.8.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (R)</a> &raquo;
+    
+    
+    <span class="title">Rubiphom</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Rubiphom
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Rubiphom</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">rubiphom.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A Ruby class for the phom R package.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Sean Ephraim</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pHom-instance_method" title="#pHom (instance method)">- (Object) <strong>pHom</strong>(x, dimension, max_filtration_value, opts = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Compute the persistent homology on a given dataset.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#plotBarcodeDiagram-instance_method" title="#plotBarcodeDiagram (instance method)">- (Object) <strong>plotBarcodeDiagram</strong>(intervals, dimension, max_f, opts = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Plots a set of intervals as a set of line-segments.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#plotPersistenceDiagram-instance_method" title="#plotPersistenceDiagram (instance method)">- (Object) <strong>plotPersistenceDiagram</strong>(intervals, max_dim, max_f, opts = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Plots a persistence diagram from a given set of intervals.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="pHom-instance_method">
+  
+    - (<tt>Object</tt>) <strong>pHom</strong>(x, dimension, max_filtration_value, opts = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Compute the persistent homology on a given dataset.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Data in the form of a matrix</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>dimension</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Max dimension to compute persistent homology to</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>max_filtration_value</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Max filtration value to use in constructing the filtered complex</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Options for computing persistent homology</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:mode</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Type of filtration to use</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:metric</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Type of metric that will be used</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:p</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Value of the power to use in the Minkowski metric</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:landmark_set_size</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Number of points to include in the landmark set</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:maxmin_samples</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Number of samples to use when performing the maxmin selection</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'rubiphom.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_pHom'>pHom</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_dimension'>dimension</span><span class='comma'>,</span> <span class='id identifier rubyid_max_filtration_value'>max_filtration_value</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='comment'># Find dimensions and convert matrix to R
+</span>  <span class='id identifier rubyid_elements'>elements</span><span class='comma'>,</span><span class='id identifier rubyid_nrow'>nrow</span><span class='comma'>,</span><span class='id identifier rubyid_ncol'>ncol</span> <span class='op'>=</span> <span class='id identifier rubyid_getRmatrix'>getRmatrix</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span>
+
+  <span class='comment'># Convert options from Ruby to R
+</span>  <span class='id identifier rubyid_phom_opts'>phom_opts</span> <span class='op'>=</span> <span class='id identifier rubyid_getRopts'>getRopts</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='comma'>,</span> <span class='symbol'>:metric</span><span class='comma'>,</span> <span class='symbol'>:p</span><span class='comma'>,</span> <span class='symbol'>:landmark_set_size</span><span class='comma'>,</span> <span class='symbol'>:maxmin_samples</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='comment'># Create R script and run it
+</span>  <span class='id identifier rubyid_code'>code</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%Q{</span><span class='tstring_content'>
+    x &lt;- matrix(c(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_elements'>elements</span><span class='embexpr_end'>}</span><span class='tstring_content'>), nrow=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_nrow'>nrow</span><span class='embexpr_end'>}</span><span class='tstring_content'>, ncol=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ncol'>ncol</span><span class='embexpr_end'>}</span><span class='tstring_content'>)
+    result &lt;- pHom(x, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dimension'>dimension</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_max_filtration_value'>max_filtration_value</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_phom_opts'>phom_opts</span><span class='embexpr_end'>}</span><span class='tstring_content'>)
+  </span><span class='tstring_end'>}</span></span>
+  <span class='id identifier rubyid_rmatrix'>rmatrix</span> <span class='op'>=</span> <span class='id identifier rubyid_runRscript'>runRscript</span><span class='lparen'>(</span><span class='id identifier rubyid_code'>code</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_intervals'>intervals</span> <span class='op'>=</span> <span class='id identifier rubyid_getRubyMatrix'>getRubyMatrix</span><span class='lparen'>(</span><span class='id identifier rubyid_rmatrix'>rmatrix</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_intervals'>intervals</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="plotBarcodeDiagram-instance_method">
+  
+    - (<tt>Object</tt>) <strong>plotBarcodeDiagram</strong>(intervals, dimension, max_f, opts = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Plots a set of intervals as a set of line-segments.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>intervals</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Matrix with 3 columns that specifies the persistence intervals</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>dimension</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The dimension to plot intervals for</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>max_f</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Maximum filtration value to use in the diagram</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Options for plotting diagram</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:title</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Title of the barcode diagram</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'rubiphom.rb', line 66</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_plotBarcodeDiagram'>plotBarcodeDiagram</span><span class='lparen'>(</span><span class='id identifier rubyid_intervals'>intervals</span><span class='comma'>,</span> <span class='id identifier rubyid_dimension'>dimension</span><span class='comma'>,</span> <span class='id identifier rubyid_max_f'>max_f</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BarcodeDiagram_</span><span class='embexpr_beg'>#{</span><span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_hex'>hex</span><span class='lparen'>(</span><span class='int'>6</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>.pdf</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_hex'>hex</span><span class='lparen'>(</span><span class='int'>6</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>.pdf</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_elements'>elements</span><span class='comma'>,</span><span class='id identifier rubyid_nrow'>nrow</span><span class='comma'>,</span><span class='id identifier rubyid_ncol'>ncol</span> <span class='op'>=</span> <span class='id identifier rubyid_getRmatrix'>getRmatrix</span><span class='lparen'>(</span><span class='id identifier rubyid_intervals'>intervals</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_phom_opts'>phom_opts</span> <span class='op'>=</span> <span class='id identifier rubyid_getRopts'>getRopts</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='comment'># Create R script and run it
+</span>  <span class='id identifier rubyid_code'>code</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%Q{</span><span class='tstring_content'>
+    intervals &lt;- matrix(c(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_elements'>elements</span><span class='embexpr_end'>}</span><span class='tstring_content'>), nrow=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_nrow'>nrow</span><span class='embexpr_end'>}</span><span class='tstring_content'>, ncol=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ncol'>ncol</span><span class='embexpr_end'>}</span><span class='tstring_content'>)
+    plotBarcodeDiagram(intervals, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dimension'>dimension</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_max_f'>max_f</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_phom_opts'>phom_opts</span><span class='embexpr_end'>}</span><span class='tstring_content'>)
+  </span><span class='tstring_end'>}</span></span>
+  <span class='id identifier rubyid_runRscript'>runRscript</span><span class='lparen'>(</span><span class='id identifier rubyid_code'>code</span><span class='rparen'>)</span>
+
+  <span class='comment'># Move &quot;Rplots.pdf&quot; so it doesn&#39;t get overwritten
+</span>  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_rename'>rename</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Rplots.pdf</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_sanitize_filename'>sanitize_filename</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="plotPersistenceDiagram-instance_method">
+  
+    - (<tt>Object</tt>) <strong>plotPersistenceDiagram</strong>(intervals, max_dim, max_f, opts = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Plots a persistence diagram from a given set of intervals.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>intervals</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Matrix with 3 columns that specifies the persistence intervals</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>max_dim</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Max dimension to plot</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>max_f</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Maximum filtration value to use in the persistence diagram</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Options for plotting diagram</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:title</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Title of the persistence diagram</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'rubiphom.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_plotPersistenceDiagram'>plotPersistenceDiagram</span><span class='lparen'>(</span><span class='id identifier rubyid_intervals'>intervals</span><span class='comma'>,</span> <span class='id identifier rubyid_max_dim'>max_dim</span><span class='comma'>,</span> <span class='id identifier rubyid_max_f'>max_f</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PersistenceDiagram_</span><span class='embexpr_beg'>#{</span><span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_hex'>hex</span><span class='lparen'>(</span><span class='int'>6</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>.pdf</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_hex'>hex</span><span class='lparen'>(</span><span class='int'>6</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>.pdf</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_elements'>elements</span><span class='comma'>,</span><span class='id identifier rubyid_nrow'>nrow</span><span class='comma'>,</span><span class='id identifier rubyid_ncol'>ncol</span> <span class='op'>=</span> <span class='id identifier rubyid_getRmatrix'>getRmatrix</span><span class='lparen'>(</span><span class='id identifier rubyid_intervals'>intervals</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_phom_opts'>phom_opts</span> <span class='op'>=</span> <span class='id identifier rubyid_getRopts'>getRopts</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='comment'># Create R script and run it
+</span>  <span class='id identifier rubyid_code'>code</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%Q{</span><span class='tstring_content'>
+    intervals &lt;- matrix(c(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_elements'>elements</span><span class='embexpr_end'>}</span><span class='tstring_content'>), nrow=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_nrow'>nrow</span><span class='embexpr_end'>}</span><span class='tstring_content'>, ncol=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ncol'>ncol</span><span class='embexpr_end'>}</span><span class='tstring_content'>)
+    plotPersistenceDiagram(intervals, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_max_dim'>max_dim</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_max_f'>max_f</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_phom_opts'>phom_opts</span><span class='embexpr_end'>}</span><span class='tstring_content'>)
+  </span><span class='tstring_end'>}</span></span>
+  <span class='id identifier rubyid_runRscript'>runRscript</span><span class='lparen'>(</span><span class='id identifier rubyid_code'>code</span><span class='rparen'>)</span>
+
+  <span class='comment'># Move &quot;Rplots.pdf&quot; so it doesn&#39;t get overwritten
+</span>  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_rename'>rename</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Rplots.pdf</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_sanitize_filename'>sanitize_filename</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Dec 18 19:36:51 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.3 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

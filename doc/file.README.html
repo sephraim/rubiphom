@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'>
+<h1 id="label-rubiphom">rubiphom</h1>
+
+<p>The Ruby solution to <em>phom</em></p>
+<hr style="height: 1px">
+
+<p><em>rubiphom</em> is a Ruby wrapper for the <em>phom</em> R package for
+computing persistent homology. Although <em>rubiphom</em> harnesses all the
+power of <em>phom</em> and its native language R, you do not actually need
+to know R. Just pure, shiny Ruby.</p>
+
+<p>For further questions on the <em>phom</em> package, what it does, and how
+to use it, please refer to the <a
+href="http://cran.r-project.org/web/packages/phom/phom.pdf">offical phom
+documentation</a>. All R examples you see here are take from that
+documentation.</p>
+
+<h2 id="label-Usage">Usage</h2>
+
+<p>Note that all plots are written to PDFs (1 plot per PDF) in the same
+directory from which your script is run. Each PDF contains one plot and is
+named according to your plot title (plus a random, unique ID). If no plot
+title is provided, a random, unique file name will be chosen.</p>
+
+<h3 id="label-Example+1">Example 1</h3>
+
+<p>Use <em>rubiphom</em> in your Ruby script as follows:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;./rubiphom.rb&#39;</span>
+
+<span class="ruby-identifier">rp</span> = <span class="ruby-constant">Rubiphom</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">y</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+
+<span class="ruby-comment"># Create random distributions, x and y</span>
+[<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>].<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-value">100</span>.<span class="ruby-identifier">times</span> {<span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">rand</span>}}
+<span class="ruby-identifier">points</span> = [<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>].<span class="ruby-identifier">transpose</span>
+
+<span class="ruby-identifier">max_dim</span> = <span class="ruby-value">2</span>
+<span class="ruby-identifier">max_f</span> = <span class="ruby-value">0.2</span> 
+
+<span class="ruby-identifier">intervals</span> = <span class="ruby-identifier">rp</span>.<span class="ruby-identifier">pHom</span>(<span class="ruby-identifier">points</span>, <span class="ruby-identifier">max_dim</span>, <span class="ruby-identifier">max_f</span>, :<span class="ruby-identifier">metric</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;manhattan&quot;</span>)
+
+<span class="ruby-identifier">rp</span>.<span class="ruby-identifier">plotPersistenceDiagram</span>(<span class="ruby-identifier">intervals</span>, <span class="ruby-identifier">max_dim</span>, <span class="ruby-identifier">max_f</span>,
+    :<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Random Points in Cube with l_1 Norm&quot;</span>)
+</pre>
+
+<p>The equivalent in R would be:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_library'>library</span><span class='lparen'>(</span><span class='id identifier rubyid_phom'>phom</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_x'>x</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='id identifier rubyid_runif'>runif</span><span class='lparen'>(</span><span class='int'>100</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_y'>y</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='id identifier rubyid_runif'>runif</span><span class='lparen'>(</span><span class='int'>100</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_points'>points</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='id identifier rubyid_t'>t</span><span class='lparen'>(</span><span class='id identifier rubyid_as'>as</span><span class='period'>.</span><span class='id identifier rubyid_matrix'>matrix</span><span class='lparen'>(</span><span class='id identifier rubyid_rbind'>rbind</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_max_dim'>max_dim</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='int'>2</span>
+<span class='id identifier rubyid_max_f'>max_f</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='float'>0.2</span>
+
+<span class='id identifier rubyid_intervals'>intervals</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='id identifier rubyid_pHom'>pHom</span><span class='lparen'>(</span><span class='id identifier rubyid_points'>points</span><span class='comma'>,</span> <span class='id identifier rubyid_max_dim'>max_dim</span><span class='comma'>,</span> <span class='id identifier rubyid_max_f'>max_f</span><span class='comma'>,</span> <span class='id identifier rubyid_metric'>metric</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>manhattan</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_plotPersistenceDiagram'>plotPersistenceDiagram</span><span class='lparen'>(</span><span class='id identifier rubyid_intervals'>intervals</span><span class='comma'>,</span> <span class='id identifier rubyid_max_dim'>max_dim</span><span class='comma'>,</span> <span class='id identifier rubyid_max_f'>max_f</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_title'>title</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Random Points in Cube with l_1 Norm</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+
+<h3 id="label-Example+2">Example 2</h3>
+
+<p>Another example of how to use <em>rubiphom</em> in your Ruby script:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;./rubiphom.rb&#39;</span>
+
+<span class="ruby-identifier">rp</span> = <span class="ruby-constant">Rubiphom</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">t</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">y</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+
+<span class="ruby-value">100</span>.<span class="ruby-identifier">times</span> {<span class="ruby-identifier">t</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span><span class="ruby-operator">*</span><span class="ruby-identifier">rand</span>}
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span><span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">elem</span>)}
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span><span class="ruby-identifier">y</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">elem</span>)}
+<span class="ruby-identifier">data</span> = [<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>].<span class="ruby-identifier">transpose</span>
+
+<span class="ruby-identifier">max_dim</span> = <span class="ruby-value">1</span>
+<span class="ruby-identifier">max_f</span> = <span class="ruby-value">0.6</span>
+
+<span class="ruby-identifier">intervals</span> = <span class="ruby-identifier">rp</span>.<span class="ruby-identifier">pHom</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">max_dim</span>, <span class="ruby-identifier">max_f</span>)
+
+<span class="ruby-identifier">rp</span>.<span class="ruby-identifier">plotPersistenceDiagram</span>(<span class="ruby-identifier">intervals</span>, <span class="ruby-identifier">max_dim</span>, <span class="ruby-identifier">max_f</span>,
+    :<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Random Points on S^1 with Euclidean Norm&quot;</span>)
+</pre>
+
+<p>The equivalent in R would be:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_library'>library</span><span class='lparen'>(</span><span class='id identifier rubyid_phom'>phom</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_t'>t</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='int'>2</span> <span class='op'>*</span> <span class='id identifier rubyid_pi'>pi</span> <span class='op'>*</span> <span class='id identifier rubyid_runif'>runif</span><span class='lparen'>(</span><span class='int'>100</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_x'>x</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='id identifier rubyid_cos'>cos</span><span class='lparen'>(</span><span class='id identifier rubyid_t'>t</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='id identifier rubyid_y'>y</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='id identifier rubyid_sin'>sin</span><span class='lparen'>(</span><span class='id identifier rubyid_t'>t</span><span class='rparen'>)</span>
+<span class='const'>X</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='id identifier rubyid_t'>t</span><span class='lparen'>(</span><span class='id identifier rubyid_as'>as</span><span class='period'>.</span><span class='id identifier rubyid_matrix'>matrix</span><span class='lparen'>(</span><span class='id identifier rubyid_rbind'>rbind</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_max_dim'>max_dim</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='int'>1</span>
+<span class='id identifier rubyid_max_f'>max_f</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='float'>0.6</span>
+
+<span class='id identifier rubyid_intervals'>intervals</span> <span class='op'>&lt;</span><span class='op'>-</span> <span class='id identifier rubyid_pHom'>pHom</span><span class='lparen'>(</span><span class='const'>X</span><span class='comma'>,</span> <span class='id identifier rubyid_max_dim'>max_dim</span><span class='comma'>,</span> <span class='id identifier rubyid_max_f'>max_f</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_plotPersistenceDiagram'>plotPersistenceDiagram</span><span class='lparen'>(</span><span class='id identifier rubyid_intervals'>intervals</span><span class='comma'>,</span> <span class='id identifier rubyid_max_dim'>max_dim</span><span class='comma'>,</span> <span class='id identifier rubyid_max_f'>max_f</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_title'>title</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Random Points on S^1 with Euclidean Norm</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+
+<h2 id="label-Requirements">Requirements</h2>
+<ul><li>
+<p>Ruby 1.9+</p>
+</li><li>
+<p>R and Rscript</p>
+</li><li>
+<p><em>phom</em> for R</p>
+</li><li>
+<p><em>Rcpp</em> for R (<em>phom</em> dependency)</p>
+</li></ul>
+
+<h2 id="label-Installation">Installation</h2>
+<ol><li>
+<p>Install Ruby 1.9+. Official documentation is <a
+href="https://www.ruby-lang.org/en/downloads/">here</a>.</p>
+</li><li>
+<p>Install R. Official documentation is <a
+href="http://cran.r-project.org/doc/manuals/R-admin.html">here</a>.</p>
+</li><li>
+<p>Install the <em>Rcpp</em> and <em>phom</em> packages for R. You can run the
+following R snippet:</p>
+
+<p>install.packages(“Rcpp”, “phom”)</p>
+</li><li>
+<p>Download <em>rubiphom.rb</em> from here, and put it in the same directory
+as your Ruby script.</p>
+</li></ol>
+</div></div>
+
+    <div id="footer">
+  Generated on Wed Dec 18 19:36:50 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.3 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>
