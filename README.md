@@ -1,6 +1,6 @@
 # rubiphom
 
-The Ruby solution to *phom*
+The Ruby solution to *phom*, the R package for computing persistent homology
 
 ---
 
